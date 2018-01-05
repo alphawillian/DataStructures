@@ -80,27 +80,29 @@ function end(){
     this.pos = this.listSize - 1;
 }
 function prev() {
-    if(this.pos > 0){
-        this.pos--;
-    }else{
-        this.pos = 0;
-    }
+    this.pos--;
 }
 function next() {
-    if(this.pos < this.listSize - 1){
+    if( this.pos < this.listSize ){
         this.pos++
-    }else{
-        this.pos = this.listSize - 1;
     }
 }
 function currPos() {
     return this.pos;
 }
 function moveTo(position) {
-    if(position < this.listSize -1){
-        this.pos = position;
-    }
+    this.pos = position;
 }
+function getElement() {
+    return this.dataStore[this.pos];
+}
+function hasNext() {
+    return this.pos < this.listSize;
+}
+function hasNext() {
+    return this.pos >= 0;
+}
+
 
 let myList = new list();
 myList.append('1');
@@ -117,3 +119,5 @@ console.log(myList.contains('1999')?'1999存在于列表中':'1999不存在于�
 
 myList.clear();
 // console.log(myList);
+
+console.log(movies);
